@@ -1,0 +1,135 @@
+.skills {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 100%;
+    left: 0;
+    background: url("../images/bg/bag.png") bottom no-repeat;
+    background-size: contain;
+  }
+
+  @include mini-desktop {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.skills__container {
+
+  padding-top: 8%;
+
+  @include desktop {
+    margin: 0;
+    width: 100%;
+  }
+
+  @include tablets {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  @include phones {
+    padding: 20% 0;
+    width: 85%;
+  }
+}
+
+.skills__top {
+  padding: 0 30%;
+
+  @include desktop {
+    padding: 0 20%;
+  }
+}
+
+.skills__title {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+
+.skills__content {
+  position: relative;
+  padding-left: 33%;
+  min-width: 320px;
+
+  @include big-desktop {
+    background-position-x: -10%;
+  }
+
+  @include desktop {
+    background-position-x: -200px;
+    padding-left: 27%;
+  }
+
+  @include mini-desktop {
+    background-position: 56% 100%;
+    background-size: auto 35%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include big-phones {
+    background-size: auto 26%;
+  }
+
+  @include mini-phones {
+    overflow-x: auto;
+  }
+}
+
+.skills__content-charts {
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.skills__bg-image-wrapper {
+  width: 50%;
+  height: 100%;
+}
+
+.skills__desc-block {
+  @include mini-desktop {
+    text-align: center;
+  }
+
+  @include phones {
+    text-align: left;
+  }
+}
+
+.skills__desc {
+  color: rgba(65, 76, 99, 0.5);
+  font-weight: 600;
+  display: block;
+  line-height: 1.88;
+
+  @include big-phones {
+    display: inline;
+  }
+}
+
+.skills__stack-list {
+  padding-left: 15%;
+  padding-top: 5%;
+
+  @include mini-desktop {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include phones {
+    padding-top: 15%;
+  }
+}
+
+.skills__stack-item {
+  margin-bottom: 5%;
+}
