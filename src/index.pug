@@ -11,26 +11,25 @@ html(lang="ru")
 
   body
     .wrapper
-      //- main content
       main.maincontent
         .greeting
 
-          //- parallax for greeting sections
+          //- parallax
           .greeting-parallax
             .greeting-parallax__layer(data-speed="0.1")
-              +image("parallax/mountain-baloon/layer-0.jpg", "greeting-parallax__image", "Слой для параллакса")
-            .greeting-parallax__layer(data-speed="0.2")
-              +image("parallax/mountain-baloon/layer-1.png", "greeting-parallax__image", "Слой для параллакса")
-            .greeting-parallax__layer(data-speed="0.3")
-              +image("parallax/mountain-baloon/layer-2.png", "greeting-parallax__image", "Слой для параллакса")
-            .greeting-parallax__layer(data-speed="0.4")
-              +image("parallax/mountain-baloon/layer-3.png", "greeting-parallax__image", "Слой для параллакса")
+              +image("parallax/mountain-baloon/layer-0.jpg", "greeting-parallax__image")
+            .greeting-parallax__layer(data-speed="0.8")
+              +image("parallax/mountain-baloon/layer-1.png", "greeting-parallax__image")
+            .greeting-parallax__layer(data-speed="2")
+              +image("parallax/mountain-baloon/layer-2.png", "greeting-parallax__image")
             .greeting-parallax__layer(data-speed="0.5")
-              +image("parallax/mountain-baloon/layer-4.png", "greeting-parallax__image", "Слой для параллакса")
-            .greeting-parallax__layer(data-speed="0.6")
-              +image("parallax/mountain-baloon/layer-5.png", "greeting-parallax__image", "Слой для параллакса")
-            .greeting-parallax__layer(data-speed="0.7")
-              +image("parallax/mountain-baloon/layer-6.png", "greeting-parallax__image", "Слой для параллакса")
+              +image("parallax/mountain-baloon/layer-3.png", "greeting-parallax__image")
+            .greeting-parallax__layer(data-speed="0.4")
+              +image("parallax/mountain-baloon/layer-4.png", "greeting-parallax__image")
+            .greeting-parallax__layer(data-speed="0.3")
+              +image("parallax/mountain-baloon/layer-5.png", "greeting-parallax__image")
+            .greeting-parallax__layer(data-speed="0.1")
+              +image("parallax/mountain-baloon/layer-6.png", "greeting-parallax__image")
 
           //- hero section
           section.hero.fullscreen-section#hero
@@ -107,7 +106,7 @@ html(lang="ru")
 
           //- personal-info section
           - var personalInfoTableRows = { "Проживаю:": "Новосибирск", "Возраст:": "27", "Родился:": "1 января 1991" }
-          section.personal-info#personal-info
+          section.personal-info.fullscreen-section#personal-info
             .container.personal-info__container
               .personal-info__content-wrapper
                 .personal-info__content

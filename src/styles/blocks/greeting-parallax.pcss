@@ -33,27 +33,24 @@
   &:nth-child(2) {
     .greeting-parallax__image {
       width: 100%;
-      top: 40%;
-
-      @include big-tablets {
-        top: 60%;
-      }
+      top: 20%;
     }
   }
 
   /* baloon */
   &:nth-child(3) {
     .greeting-parallax__image {
-      top: 518PX;
+      width: auto;
+      top: 29%;
       left: 50%;
-      margin-left: 12%;
+      margin-left: 17%;
     }
   }
 
   /* clouds */
   &:nth-child(4) {
     .greeting-parallax__image {
-      top: 610PX;
+      top: 34%;
       left: 0;
     }
   }
@@ -62,18 +59,14 @@
   &:nth-child(5) {
     .greeting-parallax__image {
       left: 0;
-      top: 60%;
-
-      @include big-tablets {
-        top: 70%;
-      }
+      top: 30%;
     }
   }
 
   /* closest mountain */
   &:nth-child(6) {
     .greeting-parallax__image {
-      bottom: -600PX;
+      bottom: 5%;
       right: 0;
     }
   }
@@ -82,24 +75,16 @@
   &:nth-child(7) {
     .greeting-parallax__image {
       left: 0;
-      bottom: -50%;
+      bottom: -5%;
       height: 70%;
       width: 100%;
-
-      @include mini-desktop {
-        bottom: -40%;
-        height: 60%;
-      }
-
-      @include big-tablets {
-        height: 55%;
-      }
     }
   }
 }
 
 .greeting-parallax__image {
   position: absolute;
+  width: 100%;
 }
 
 .greeting-parallax__bg {

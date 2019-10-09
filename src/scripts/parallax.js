@@ -3,12 +3,13 @@ const greetLayers = greetParallax.children;
 
 const revContParallax = document.querySelector(".rev-cont-parallax");
 const revContLayers = revContParallax.children;
+
 let revContTop, delta;
 
 function moveLayers(wScroll, layers) {
   Array.from(layers).forEach(layer => {
     const speedCoeff = layer.dataset.speed;
-    const layerOffset = (wScroll * speedCoeff) / 50;
+    const layerOffset = (wScroll * speedCoeff) / 40;
 
     layer.style.transform = `translateY(-${layerOffset}%)`;
   });
@@ -30,6 +31,8 @@ window.addEventListener("scroll", e => {
     }
   }
 });
+
+
 
 function getCoords(elem) {
   var box = elem.getBoundingClientRect();
