@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = {
   syntax: "postcss-scss",
-  parser: 'postcss-scss',
+  parser: "postcss-scss",
   plugins: [
     require("postcss-easy-import")({
       extensions: ".pcss"
@@ -21,7 +21,7 @@ module.exports = {
     require("cssnano"),
     require("postcss-pxtorem")({
       rootValue: 16,
-      propList: ["*", "!*border*"],
+      propList: ["*", "!*border*", "!*width*", "!*height*"],
       selectorBlackList: [/^html$/]
     })
   ]
