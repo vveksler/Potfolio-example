@@ -2,7 +2,7 @@ import Vue from "vue";
 import axios from "axios";
 
 const _tick = 10000;
-const _transition = 1000;
+const _transition = 500;
 
 const thumbs = {
   template: "#slider-thumbs",
@@ -111,7 +111,7 @@ new Vue({
   },
   watch: {
     currentIndex(value) {
-      this.updateCurIndex(value);
+      this.makeInfiniteLoopForCurIndex(value);
     }
   },
   methods: {
@@ -129,7 +129,7 @@ new Vue({
       if (value > worksAmount) this.currentIndex = 0;
       if (value < 0) this.currentIndex = worksAmount;
     },
-    updateCurIndex(value) {
+    makeNoInfiniteSlider(value) {
       if (value === this.works.length) {
         this.currentIndex = this.works.length - 1;
       } else if (value <= 0) this.currentIndex = 0;

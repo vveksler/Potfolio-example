@@ -1,6 +1,7 @@
+// Greeting section parallax
 const greetParallax = document.querySelector(".greeting-parallax");
 const greetLayers = greetParallax.children;
-
+// Reviews section parallax
 const revContParallax = document.querySelector(".rev-cont-parallax");
 const revContLayers = revContParallax.children;
 
@@ -15,12 +16,28 @@ function moveLayers(wScroll, layers) {
   });
 }
 
-window.addEventListener("scroll", e => {
+function getCoords(elem) {
+  const box = elem.getBoundingClientRect();
+  const body = document.body;
+
+  const scrollTop = window.pageYOffset || body.scrollTop;
+  const scrollLeft = window.pageXOffset || body.scrollLeft;
+
+  const clientTop = body.clientTop || 0;
+  const clientLeft = body.clientLeft || 0;
+
+  const top = box.top + scrollTop - clientTop;
+  const left = box.left + scrollLeft - clientLeft;
+
+  return { top: Math.round(top), left: Math.round(left) };
+}
+
+window.addEventListener("scroll", () => {
   if (window.innerWidth >= 768) {
-    if (!revContTop) {
-      revContTop = getCoords(revContParallax).top;
-      delta = revContTop - window.innerHeight;
-    }
+    // Только если ширина экрана больше 768 паралакс будет работать
+
+    revContTop = getCoords(revContParallax).top;
+    delta = revContTop - window.innerHeight;
 
     const wScroll = window.pageYOffset;
     moveLayers(wScroll, greetLayers);
@@ -31,23 +48,3 @@ window.addEventListener("scroll", e => {
     }
   }
 });
-
-
-
-function getCoords(elem) {
-  var box = elem.getBoundingClientRect();
-
-  var body = document.body;
-  var docEl = document.documentElement;
-
-  var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-  var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-
-  var clientTop = docEl.clientTop || body.clientTop || 0;
-  var clientLeft = docEl.clientLeft || body.clientLeft || 0;
-
-  var top = box.top + scrollTop - clientTop;
-  var left = box.left + scrollLeft - clientLeft;
-
-  return { top: Math.round(top), left: Math.round(left) };
-}
